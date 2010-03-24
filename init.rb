@@ -1,4 +1,9 @@
-require "delayed_cron"
+require "repeated_job"
 
-cron = Delayed::Cron.new
-cron.schedule_next
+begin
+  cron = Repeated::Job.new
+  cron.schedule_next
+rescue StandardError
+  puts "Exception encountered, Repeated::Cron not loaded"
+  puts $!
+end

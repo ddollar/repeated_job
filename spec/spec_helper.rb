@@ -5,7 +5,7 @@ require "rubygems"
 require "spec"
 require "spec/autorun"
 
-require "delayed_cron"
+require "repeated_job"
 
 module Delayed
   class Job
